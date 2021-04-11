@@ -3,6 +3,7 @@
 	<head>
 		<title>Otia | Home</title>
 		<!-- link to main stylesheet -->
+		<script src="https://kit.fontawesome.com/5dc4d11d88.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<!-- link to icon -->
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -11,7 +12,47 @@
         <meta name = "description" content = "Home of the portable blackout blind" />
         <meta name = "revised" content = "IsaacOldwood, 11/04/2021" />
 		<meta name = "author" content = "Isaac Oldwood" />
+		<!--JS-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 	</head>
 	<body>
+		<div class="center">
+			<h1 class="ml15">
+				<span class="word">
+					<span class="fa-stack">
+						<i class="fa fa-circle-thin fa-stack-2x"></i>
+						<i class="fa fa-moon fa-stack-1x"></i>
+					</span>TIA
+				</span>
+			</h1>
+			<br>
+			<h1 class="ml3">Site coming soon...</h1>
+		</div>
+		<script>
+			// Wrap every letter in a span
+			var textWrapper = document.querySelector('.ml3');
+			textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+			anime.timeline({loop: false})
+	  		.add({
+				targets: '.ml15 .word',
+				scale: [14,1],
+				opacity: [0,1],
+				easing: "easeOutCirc",
+				duration: 800,
+				delay: (el, i) => 800 * i
+	  		}).add({
+			    targets: '.ml3 .letter',
+			    opacity: [0,1],
+			    easing: "easeInOutQuad",
+			    duration: 2250,
+			    delay: (el, i) => 150 * (i+1)
+			  }).add({
+			    targets: '.ml3',
+			    opacity: 0,
+			    duration: 1000,
+			    easing: "easeOutExpo",
+			    delay: 1000
+			  });
+		</script>
 	</body>
 </html>
