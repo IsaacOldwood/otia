@@ -71,6 +71,10 @@ a {
     font-size: 1.25em;
 }
 
+img.full_logo_negative {
+    max-width: 50%;
+}
+
 @media only screen and (max-width: 426px) {
     body {
         font-size: 2vw;
